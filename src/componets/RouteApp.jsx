@@ -9,7 +9,7 @@ function RouteApp() {
       <main>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/form/" element={<RegistrationPage />} />
+          <Route path="/form/:organizationId" element={<RegistrationPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>
