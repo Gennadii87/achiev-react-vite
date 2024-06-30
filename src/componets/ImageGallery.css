@@ -1,0 +1,52 @@
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    gap: 20px;
+  }
+  
+  .image-card {
+    width: 100px; /* или другое значение ширины */
+    margin: 10px;
+    animation: fadeInUp 0.5s cubic-bezier(0, 1.1, 0.37, 1.1) forwards; 
+    transition: transform 0.3s cubic-bezier(0, 1.22, 0.37, 1.67);
+    
+  }
+
+  .image-card:hover {
+    transform: scale(1.1); 
+  }
+  .forecastCard:nth-of-type(1) {
+    animation-delay: 0.1s; 
+  }
+  .forecastCard:nth-of-type(2) {
+    animation-delay: 0.2s; 
+  }
+  .forecastCard:nth-of-type(3) {
+    animation-delay: 0.3s; 
+  }
+  .forecastCard:nth-of-type(4) {
+    animation-delay: 0.4s; 
+  }
+  .forecastCard:nth-of-type(5) {
+    animation-delay: 0.5s; 
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1; 
+      scale: 1.2;
+    }
+  }
+
+  
+  
+  .image-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .image-card p {
+    text-align: center;
+    color: aliceblue;
+  }
+  

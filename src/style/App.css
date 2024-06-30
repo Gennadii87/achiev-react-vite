@@ -1,0 +1,115 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    /* background-color: rgb(246, 218, 247); */
+    background-color: rgb(25, 19, 26);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+h1 {
+    color: rgb(223, 223, 223);
+    font-size: 56px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.imgs {
+    display: inline;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+img {
+    width: 100px;
+
+}
+/* #output {
+    display: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(240, 217, 217);
+    font-size: 56px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 10px;
+    padding: 6px;
+}
+
+.btn {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn1 {
+    width: 150px;
+    height: 50px;
+    color: aliceblue;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: rgb(59, 57, 57);
+    border-color: rgb(0, 0, 0);
+}
+
+.btn1:hover {
+    background-color: rgb(80, 80, 156);
+    color: rgb(255, 255, 255);
+} */
+
+
+
+.pdf-container {
+    display: grid;
+    
+    grid-template-columns: repeat(1, auto);
+    justify-content:center;
+    width: 100%;
+    max-width: auto; /* Пример ширины контейнера */
+    margin: 0 auto;
+}
+
+.pdf-page {
+    display: grid;
+    
+    width: 100%; /* Задайте ширину страницы PDF */
+    height: content; /* Задайте высоту страницы PDF, чтобы она масштабировалась автоматически */
+}
+
+.react-pdf__Page__annotations.annotationLayer {
+    /* Задайте желаемые размеры слоя аннотаций */
+    max-height: auto; /* Пример максимальной высоты */
+    overflow-y: auto; /* Добавьте вертикальную прокрутку, если содержимое превышает максимальную высоту */
+
+}
+
+.profile {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 10px;
+}
+.achiev-wrapp{
+    background-color: aliceblue;
+}
+
+
+
+
+.img_gallery{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 10px;
+}
+

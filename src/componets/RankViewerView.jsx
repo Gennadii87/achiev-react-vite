@@ -1,0 +1,58 @@
+import React, { useState, useEffect } from 'react';
+import RankSetter from './RankSetter';
+
+const RankViewerView = ({ selectedUserId, updateAchievements }) => {
+  const [rankData, setRankData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!selectedUserId || selectedUserId === 0) {
+      setLoading(false);
+      return;
+    }
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://reg.achiever.skroy.ru/ranks/?meta_status=active&user_id=${selectedUserId}`);
+        const data = await response.json();
+        setRankData(data.results);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching rank data:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [selectedUserId, updateAchievements]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  const userRankData = rankData.find(item => item.user_id === selectedUserId);
+  const rankId = userRankData ? userRankData.id : null; 
+  
+return (
+  <div>
+    <ul>
+      {rankData.length === 0 ? (
+        <li>
+          <h1>Баллы: 0</h1>
+        </li>
+      ) : (
+        rankData.map((item) => (
+          <li key={item.id}>
+            <h1>Баллы: {item.data && item.data.rank !== undefined ? item.data.rank : 0}</h1> 
+          </li>
+        ))
+      )}
+    </ul>
+    <RankSetter rankId={rankId} updateAchievements={updateAchievements}/>
+  </div>
+);
+
+};
+
+
+export default RankViewerView;

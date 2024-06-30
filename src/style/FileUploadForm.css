@@ -1,0 +1,118 @@
+.file_container {
+    display: flex;
+    justify-content: space-around;
+   
+    
+} 
+
+.data_viewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    height: 600px;
+    background-color: #c9ffde;
+    padding: 10px;
+    
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    border-width: 1px;
+    max-width: 100%; 
+    overflow-x: auto;
+    overflow-x: auto;
+}
+
+.loading__viewer{
+    display: flex;
+    align-items: center;
+}
+
+.data_viewer img {
+    width: 90%;
+    height: auto;
+}
+
+.pre_file_text {
+    padding-left: 20px;
+    font-size: 14px;
+    color: #1f1f1f;
+    word-break: break-all;
+  }
+
+.form_send {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.form_send_file {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    padding: 20px;
+
+}
+
+.file_link {
+    margin-top: 5px;
+    text-align: center;
+    padding: 7px;
+    color: #ffffff;
+    background-color: rgb(32, 34, 34);
+    width: 300px;
+    font-size: 16px;
+    /* word-wrap: break-word;  */
+    /* overflow-wrap: break-word;  */
+    /* word-break: break-all; */
+}
+.error_response{
+    width: 300px;
+    overflow-wrap: break-word;
+    text-align: center;
+    font-size: 18px;
+}
+.form_send_file h2 {
+    margin-bottom: 20px;
+}
+
+.form_send_file label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form_send_file select,
+.form_send_file input[type="text"],
+.form_send_file input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form_send_file select {
+    height: 40px; 
+}
+
+.form_send_file button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form_send_file button:hover {
+    background-color: #0056b3;
+}

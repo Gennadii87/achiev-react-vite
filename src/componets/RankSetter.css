@@ -1,0 +1,35 @@
+
+.rank-container{
+    width: 300px;
+}
+
+.rank-form-container{
+    width: 98%;
+    height: 50px;
+    font-size: 50px;
+}
+
+.rank-form-container-error{
+  width: 98%;
+  height: 50px;
+  font-size: 30px;
+}
+
+.edit-button-rank {
+    background-color: #81bcfa;
+    width: 100%;
+    padding: 25px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-size: 30px;
+  }
+
+  .edit-button-rank:hover {
+    background-color: #8ec5ff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }

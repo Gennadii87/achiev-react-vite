@@ -1,0 +1,123 @@
+.achievements-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .achievements-list-user {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width:30%;
+  }
+
+  .achievement-card-user.with-background {
+    width: 150px;
+    margin: 20px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    background-color: #f0f0f0;
+    border: 7px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    background-size: 120% 130%;
+    background-position: center;
+    background-repeat: no-repeat; /* Отключение повтора фона */
+  }
+  
+ 
+
+  .delete_bt {
+    background-color: red;
+    padding: 10px;
+  }
+  .achievement-card-conn {
+    width: 400px;
+    margin: 20px;
+    padding: 10px;
+    color: rgb(44, 44, 44);
+    background-color: #f0f0f0;
+    border: 7px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    background-size: 120% 130%;
+    background-position: center;
+    background-repeat: no-repeat; /* Отключение повтора фона */
+  }
+
+  .achievement-card.with-background {
+    width: 110px;
+    margin: 20px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    text-align: center;
+    background-size: calc(100% * 1.5); 
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeInUp 0.5s cubic-bezier(0, 1.1, 0.37, 1.1) forwards;
+    transition: transform 0.3s cubic-bezier(0, 1.22, 0.37, 1.67);
+}
+
+  .achievement-card:hover {
+    transform: scale(1.1); 
+  }
+  .forecastCard:nth-of-type(1) {
+    animation-delay: 0.1s; 
+  }
+  .forecastCard:nth-of-type(2) {
+    animation-delay: 0.2s; 
+  }
+  .forecastCard:nth-of-type(3) {
+    animation-delay: 0.3s; 
+  }
+  .forecastCard:nth-of-type(4) {
+    animation-delay: 0.4s; 
+  }
+  .forecastCard:nth-of-type(5) {
+    animation-delay: 0.5s; 
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1; 
+      scale: 1.2;
+    }
+  }
+
+  .achievement-card img {
+    width: 60%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .achievement-card p {
+    margin: 5px 0;
+    
+  }
+
+  .delete_card_achiev {
+    background-color: aqua;
+    transition: background-color 0.5s ease; 
+    padding: 2px 20px 2px 20px;
+    margin: 2px;
+  }
+  
+  .delete_card_achiev:hover {
+    background-color: rgb(255, 0, 76);
+  }
+  
+  .delete_bt_connect {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .delete_bt_connect:hover{
+    background-color: #134b2f;
+
+  }

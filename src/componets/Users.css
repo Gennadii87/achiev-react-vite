@@ -1,0 +1,140 @@
+.users-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.users-profile {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .users-card {
+   
+    width: 500px;
+    background-color: #e7e7e7;
+    border: 6px solid;
+    border-color: rgb(129, 129, 129);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .users-avatar {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .users-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  .users-details {
+    text-align: left;
+    flex-wrap: wrap;
+  }
+  
+  .users-details p {
+    font-size: 22px;
+    margin-bottom: 10px;
+    word-wrap: normal;
+    word-wrap: break-word;
+    background-color: #9dc9f8;
+    border-radius: 4px;
+    border-color: #134b2f;
+    border: 3px;
+    border-style: solid;
+    padding: 5px;
+  }
+  .cancel-icon {
+    cursor: pointer;
+    float: right;
+  }
+
+  .cancel-icon:hover {
+    color: red;
+    /* background-color: rgb(255, 0, 0);  */
+    padding: 5px;
+    border-radius: 25px;
+    border: 2px;
+    border-style: solid;
+  }
+
+  .user-form-add{
+    display: flex;
+    justify-content: center;
+  }
+  .user-form-container-add {
+    width: 800px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-form-container-add form {
+   
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-form-container-add label {
+    overflow-wrap: break-word;
+    margin-bottom: 10px;
+  }
+  
+  .user-form-container-add input {
+    font-size: 20px;
+    padding: 10px;
+    width: calc(100% - 22px); /* ширина поля минус внутренние отступы */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .user-form-container-add button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+ 
+  .user-form-container-add button:hover {
+    background-color: #134b2f;
+  }
+
+
+  .delete-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+ 
+  .delete-btn:hover {
+    background-color: #134b2f;
+  }
+
+  .selected-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.selected-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: contain;
+}
