@@ -109,28 +109,6 @@ const Users = ({ updateAchievements }) => {
     };
     return (
         <div>
-            {/* <div className="user-form-add">
-                <div className="user-form-container-add">
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" value={formData.first_name} onChange={(e) => setFormData({...formData, first_name: e.target.value})} placeholder="Имя" />
-                        <input type="text" value={formData.last_name} onChange={(e) => setFormData({...formData, last_name: e.target.value})} placeholder="Фамилия" />
-                        <input type="text" value={formData.middle_name} onChange={(e) => setFormData({...formData, middle_name: e.target.value})} placeholder="Отчество" />
-                        <input type="date" value={formData.birth_date} onChange={(e) => setFormData({...formData, birth_date: e.target.value})} placeholder="Дата рождения" />
-                        <input type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} placeholder="Email" />
-                        <input type="tel" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} placeholder="Телефон" />
-                        <div>
-                            <input type="file" onChange={handleFileChange} />
-                            {formData.photo_main && (
-                                <div>
-                                    <p>Выбранное изображение:</p>
-                                    <img src={URL.createObjectURL(formData.photo_main)} alt="Selected Image" />
-                                </div>
-                            )}
-                        </div>
-                        <button type="submit">Создать пользователя</button>
-                    </form>
-                </div>
-            </div> */}
             {loadingError ? (
                 <div className="error-card">
                     <h1>Произошла ошибка при загрузке данных пользователей.</h1>
