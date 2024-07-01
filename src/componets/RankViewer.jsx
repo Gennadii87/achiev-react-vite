@@ -21,9 +21,9 @@ const RankViewer = ({ updateObject, updateAchievements }) => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://reg.achiever.skroy.ru/ranks/?meta_status=active&user_id=${profileId}`);
+        const response = await fetch(`https://reg.achiever.skroy.ru/ranks/?user_id=${profileId}`);
         const data = await response.json();
-        setRankData(data.results);
+        setRankData(data);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching rank data:', error);
@@ -49,7 +49,7 @@ return (
       ) : (
         rankData.map((item) => (
           <li key={item.id}>
-            <h1>Баллы: {item.data && item.data.rank !== undefined ? item.data.rank : 0}</h1> 
+            <h1>Баллы: {item && item.rank !== undefined ? item.rank : 0}</h1> 
           </li>
         ))
       )}

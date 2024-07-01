@@ -17,15 +17,13 @@ const RankSetter = ({ rankId, updateAchievements }) => {
         return;
       }
 
-      const response = await fetch(`https://reg.achiever.skroy.ru/rank/${rankId}/`, {
+      const response = await fetch(`https://reg.achiever.skroy.ru/ranks/${rankId}/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          data: {
-            rank: rank
-          }
+          rank: rank
         })
       });
       
