@@ -13,7 +13,7 @@ const RankViewerView = ({ selectedUserId, updateAchievements }) => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://api.achiever.skroy.ru/ranks/?user_id=${selectedUserId}`);
+        const response = await fetch(`https://api.achiever.skroy.ru/ranks/?profile_id=${selectedUserId}`);
         const data = await response.json();
         setRankData(data);
         setLoading(false);
