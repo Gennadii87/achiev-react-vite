@@ -6,10 +6,10 @@ const AchievForm = ({ updateAchievements }) => {
     tag: 'Failure',
     rank: 101,
     color: 'green',
-    image: 'https://reg.achiever.skroy.ru/media/image/Image=Failure.svg',
+    image: 'https://api.achiever.skroy.ru/media/image/Image=Failure.svg',
     title: 'Failure',
     description: 'Achiev1',
-    achiev_style: 'https://reg.achiever.skroy.ru/media/template/CardAchievementMediumPrimaryCircle.png'
+    achiev_style: 'https://api.achiever.skroy.ru/media/template/CardAchievementMediumPrimaryCircle.png'
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -23,7 +23,7 @@ const AchievForm = ({ updateAchievements }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://reg.achiever.skroy.ru/achievements/', {
+      const response = await fetch('https://api.achiever.skroy.ru/achievements/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

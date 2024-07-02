@@ -33,7 +33,7 @@ const UserProfile = ({ achievUuid, selectedUserId, setSelectedUserId, updateAchi
             if (!organizationId) return; // Проверяем, есть ли organizationId
             
             try {
-                const response = await fetch('https://reg.achiever.skroy.ru/profiles/', {
+                const response = await fetch('https://api.achiever.skroy.ru/profiles/', {
                     headers: {
                       'ORGANIZATION-ID': organizationId // Используем значение из локального хранилища
                     }
@@ -56,7 +56,7 @@ const UserProfile = ({ achievUuid, selectedUserId, setSelectedUserId, updateAchi
         const fetchData = async () => {
             if (selectedUserId) {
                 try {
-                    const response = await fetch(`https://reg.achiever.skroy.ru/profiles/${selectedUserId}/`);
+                    const response = await fetch(`https://api.achiever.skroy.ru/profiles/${selectedUserId}/`);
                     if (!response.ok) {
                         throw new Error('Failed to fetch user data');
                     }
@@ -108,7 +108,7 @@ const UserProfile = ({ achievUuid, selectedUserId, setSelectedUserId, updateAchi
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`https://reg.achiever.skroy.ru/profiles/${selectedUserId}/`, {
+            const response = await fetch(`https://api.achiever.skroy.ru/profiles/${selectedUserId}/`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -119,7 +119,7 @@ const UserProfile = ({ achievUuid, selectedUserId, setSelectedUserId, updateAchi
             });
             if (response.ok) {
                 console.log('User data updated successfully');
-                const updatedResponse = await fetch(`https://reg.achiever.skroy.ru/profiles/${selectedUserId}/`);
+                const updatedResponse = await fetch(`https://api.achiever.skroy.ru/profiles/${selectedUserId}/`);
                 if (!updatedResponse.ok) {
                     throw new Error('Failed to fetch updated user data');
                 }

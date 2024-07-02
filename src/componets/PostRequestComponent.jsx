@@ -9,7 +9,7 @@ const PostRequestComponent = ({ userUuid, achievUuid, updateAchievements }) => {
     setLoading(true);
   
     try {
-      const response = await fetch('https://reg.achiever.skroy.ru/user-achievements/', {
+      const response = await fetch('https://api.achiever.skroy.ru/user-achievements/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

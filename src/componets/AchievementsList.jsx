@@ -17,7 +17,7 @@ const AchievementsList = ({ updateObject, onSelectAchievement, updateAchievement
       if (!organizationId) return; // Проверяем, есть ли organizationId
 
       try {
-        const response = await fetch('https://reg.achiever.skroy.ru/achievements/', {
+        const response = await fetch('https://api.achiever.skroy.ru/achievements/', {
           headers: {
             'ORGANIZATION-ID': organizationId // Используем значение из локального хранилища
           }
@@ -40,7 +40,7 @@ const AchievementsList = ({ updateObject, onSelectAchievement, updateAchievement
 
   const handleDeleteAchievement = async (achievementId) => {
     try {
-      await fetch(`https://reg.achiever.skroy.ru/achievements/${achievementId}/`, {
+      await fetch(`https://api.achiever.skroy.ru/achievements/${achievementId}/`, {
         method: 'DELETE'
       });
       // Обновляем список достижений после удаления

@@ -17,7 +17,7 @@ const RankSetter = ({ rankId, updateAchievements }) => {
         return;
       }
 
-      const response = await fetch(`https://reg.achiever.skroy.ru/ranks/${rankId}/`, {
+      const response = await fetch(`https://api.achiever.skroy.ru/ranks/${rankId}/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'

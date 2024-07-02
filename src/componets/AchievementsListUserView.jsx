@@ -16,7 +16,7 @@ const AchievementsListUserView = ({ updateObject, updateAchievements }) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`https://reg.achiever.skroy.ru/user-achievements/${profileId}`);
+      const response = await axios.get(`https://api.achiever.skroy.ru/user-achievements/${profileId}`);
       const extractedAchievements = response.data.map(item => ({
         id: item.id,
         data: item.data

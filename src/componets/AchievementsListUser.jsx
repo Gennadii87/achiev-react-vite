@@ -7,7 +7,7 @@ const AchievementsListUser = ({ userId, updateAchievements }) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`https://reg.achiever.skroy.ru/user-achievements/${userId}`);
+      const response = await axios.get(`https://api.achiever.skroy.ru/user-achievements/${userId}`);
       const extractedAchievements = response.data.map(item => ({
         id: item.id,
         data: item.data
@@ -26,7 +26,7 @@ const AchievementsListUser = ({ userId, updateAchievements }) => {
 
   const handleDeleteAchievement = async (id) => {
     try {
-      await axios.delete(`https://reg.achiever.skroy.ru/user-achievements/${id}`);
+      await axios.delete(`https://api.achiever.skroy.ru/user-achievements/${id}`);
       const updatedAchievements = achievements.filter(connect => connect.id !== id);
       setAchievements(updatedAchievements);
     } catch (error) {

@@ -21,7 +21,7 @@ const Users = ({ updateAchievements }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://reg.achiever.skroy.ru/profiles/', {
+                const response = await fetch('https://api.achiever.skroy.ru/profiles/', {
                     headers: {
                       'ORGANIZATION-ID': '642dc1e1-162d-4cb5-a3d1-7f4fcbcb5389'
                     }
@@ -56,7 +56,7 @@ const Users = ({ updateAchievements }) => {
         console.log('Form data to be sent:', Object.fromEntries(formDataToSend.entries()));
 
         try {
-            const response = await fetch('https://reg.achiever.skroy.ru/profiles/', {
+            const response = await fetch('https://api.achiever.skroy.ru/profiles/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const Users = ({ updateAchievements }) => {
 
     const handleDeleteUser = async (userId) => {
         try {
-            const response = await fetch(`https://reg.achiever.skroy.ru/profiles/${userId}`, {
+            const response = await fetch(`https://api.achiever.skroy.ru/profiles/${userId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

@@ -7,7 +7,7 @@ const ImageGallery = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://reg.achiever.skroy.ru/avatar-images/');
+        const response = await fetch('https://api.achiever.skroy.ru/avatar-images/');
         const data = await response.json();
         setImages(data);
       } catch (error) {
@@ -19,7 +19,7 @@ const ImageGallery = () => {
   }, []);
   const handleDeleteAchievement = async (imageId) => {
     try {
-      await fetch(`https://reg.achiever.skroy.ru/achievements/${imageId}/`, {
+      await fetch(`https://api.achiever.skroy.ru/achievements/${imageId}/`, {
         method: 'DELETE'
       });
       // Обновляем список достижений после удаления

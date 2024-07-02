@@ -15,7 +15,7 @@ const AchievListConnections = ({ updateObject }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://reg.achiever.skroy.ru/user-achievements/${profileId}`);
+        const response = await axios.get(`https://api.achiever.skroy.ru/user-achievements/${profileId}`);
         const extractedAchievements = response.data.map(item => ({
           id: item.id,
           data: item.data
@@ -33,7 +33,7 @@ const AchievListConnections = ({ updateObject }) => {
 
   const handleDeleteAchievement = async (id) => {
     try {
-      await axios.delete(`https://reg.achiever.skroy.ru/user-achievements/${id}`);
+      await axios.delete(`https://api.achiever.skroy.ru/user-achievements/${id}`);
       // Успешно удалено, обновим список достижений
       const updatedAchievements = achievements.filter(connect => connect.id !== id);
       setAchievements(updatedAchievements);

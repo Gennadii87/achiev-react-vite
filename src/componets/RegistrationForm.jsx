@@ -13,7 +13,7 @@ const RegistrationForm = ({ organizationId }) => {
     email: 'user@example.com'
   });
 
-  const apiUrl = `https://reg.achiever.skroy.ru/registrations/?organization_id=${organizationId}`;
+  const apiUrl = `https://api.achiever.skroy.ru/registrations/?organization_id=${organizationId}`;
 
   const handleSubmit = async (event) => {
     event.preventDefault();

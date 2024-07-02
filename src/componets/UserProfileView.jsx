@@ -32,7 +32,7 @@ const UserProfileView = ({ updateObject }) => {
         const fetchData = async () => {
             if (profileId) {
                 try {
-                    const response = await fetch(`https://reg.achiever.skroy.ru/profiles/${profileId}/`);
+                    const response = await fetch(`https://api.achiever.skroy.ru/profiles/${profileId}/`);
                     if (!response.ok) {
                         throw new Error('Failed to fetch user data');
                     }
@@ -113,13 +113,13 @@ const UserProfileView = ({ updateObject }) => {
             formDataToSend.append('photo_main', formData.photo_main);
             formDataToSend.append('photo_small', formData.photo_small);
 
-            const response = await fetch(`https://reg.achiever.skroy.ru/profiles/${profileId}/`, {
+            const response = await fetch(`https://api.achiever.skroy.ru/profiles/${profileId}/`, {
                 method: 'PATCH',
                 body: formDataToSend
             });
 
             if (response.ok) {
-                const updatedResponse = await fetch(`https://reg.achiever.skroy.ru/profiles/${profileId}/`);
+                const updatedResponse = await fetch(`https://api.achiever.skroy.ru/profiles/${profileId}/`);
                 if (!updatedResponse.ok) {
                     throw new Error('Failed to fetch updated user data');
                 }

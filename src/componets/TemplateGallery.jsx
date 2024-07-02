@@ -7,7 +7,7 @@ const TemplateGallery = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://reg.achiever.skroy.ru/templates-images/');
+        const response = await fetch('https://api.achiever.skroy.ru/templates-images/');
         const data = await response.json();
         setImages(data);
       } catch (error) {
