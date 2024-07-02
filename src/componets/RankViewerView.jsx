@@ -30,7 +30,7 @@ const RankViewerView = ({ selectedUserId, updateAchievements }) => {
     return <div>Loading...</div>;
   }
 
-  const userRankData = rankData.find(item => item.user_id === selectedUserId);
+  const userRankData = rankData.find(item => item.profile_id === selectedUserId);
   const rankId = userRankData ? userRankData.id : null; 
   
 return (
