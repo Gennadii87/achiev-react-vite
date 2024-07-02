@@ -15,28 +15,36 @@ const AchievForm = ({ updateAchievements }) => {
   const [formData, setFormData] = useState(initialFormData);
   const [response, setResponse] = useState(null);
   const [previewData, setPreviewData] = useState(null);
+  const [organizationId, setOrganizationId] = useState(null);
+
+  useEffect(() => {
+    // Чтение organization_id из локального хранилища
+    const orgId = localStorage.getItem('organization_id');
+    setOrganizationId(orgId);
+  }, []);
 
   useEffect(() => {
     setPreviewData(formData);
   }, [formData]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('https://api.achiever.skroy.ru/achievements/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-      const responseData = await response.json();
-      setResponse(responseData);
-      updateAchievements();
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const response = await fetch('https://api.achiever.skroy.ru/achievements/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'ORGANIZATION-ID': organizationId
+          },
+          body: JSON.stringify(formData)
+        });
+        const responseData = await response.json();
+        setResponse(responseData);
+        updateAchievements();
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
