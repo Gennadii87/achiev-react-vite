@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import App from './componets/App';
+import RouteApp from './componets/RouteApp';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename='/achiev-react-vite/'>
-      <App/>
+      <RouteApp/>
     </BrowserRouter>
   </React.StrictMode>
 );
