@@ -3,7 +3,7 @@ import './UserProfile.css';
 
 const defaultAvatar = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Man_silhouette.svg/640px-Man_silhouette.svg.png';
 
-const UserProfileView = ({ updateObject }) => {
+const UserProfileView = ({}) => {
     const [userData, setUserData] = useState(null);
     const [loadingError, setLoadingError] = useState(false);
     const [editMode, setEditMode] = useState(false);
@@ -26,7 +26,7 @@ const UserProfileView = ({ updateObject }) => {
     useEffect(() => {
         const proId = localStorage.getItem('profile_id');
         setProfileId(proId);
-    }, [updateObject]);
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {

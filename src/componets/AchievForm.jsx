@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AchievForm.css'; 
 
-const AchievForm = ({ updateAchievements }) => {
+const AchievForm = ({ }) => {
   const initialFormData = {
     tag: 'Failure',
     rank: 101,
@@ -40,7 +40,6 @@ const AchievForm = ({ updateAchievements }) => {
         });
         const responseData = await response.json();
         setResponse(responseData);
-        updateAchievements();
       } catch (error) {
         console.error('Error:', error);
       }

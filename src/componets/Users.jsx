@@ -3,7 +3,7 @@ import './Users.css';
 
 const defaultAvatar = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Man_silhouette.svg/640px-Man_silhouette.svg.png';
 
-const Users = ({ updateAchievements }) => {
+const Users = ({ }) => {
     const [usersData, setUsersData] = useState([]);
     const [loadingError, setLoadingError] = useState(false);
     const [formData, setFormData] = useState({
@@ -38,7 +38,7 @@ const Users = ({ updateAchievements }) => {
         };
 
         fetchData();
-    }, [updateAchievements]);
+    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -67,7 +67,7 @@ const Users = ({ updateAchievements }) => {
             if (!response.ok) {
                 throw new Error('Failed to create user');
             }
-            updateAchievements();
+            
         } catch (error) {
             console.error('Error creating user:', error);
         }
@@ -85,7 +85,7 @@ const Users = ({ updateAchievements }) => {
             if (!response.ok) {
                 throw new Error('Failed to delete user');
             }
-            updateAchievements();
+          
         } catch (error) {
             console.error('Error deleting user:', error);
         }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AchievementsList.css'; 
 
-const AchievementsList = ({ updateObject, onSelectAchievement, updateAchievements }) => {
+const AchievementsList = ({ onSelectAchievement }) => {
   const [achievements, setAchievements] = useState([]);
   const [selectedAchievUuid, setSelectedAchievUuid] = useState(null); 
   const [organizationId, setOrganizationId] = useState(null);
@@ -10,7 +10,7 @@ const AchievementsList = ({ updateObject, onSelectAchievement, updateAchievement
     // Чтение organization_id из локального хранилища
     const orgId = localStorage.getItem('organization_id');
     setOrganizationId(orgId);
-  }, [updateObject]);
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +30,7 @@ const AchievementsList = ({ updateObject, onSelectAchievement, updateAchievement
     };
 
     fetchData();
-  }, [organizationId, updateAchievements]);
+  }, [organizationId]);
 
   const handleSelectAchievement = (achievUuid) => {
     setSelectedAchievUuid(achievUuid); // Обновляем состояние с выбранным achievUuid
@@ -45,7 +45,7 @@ const AchievementsList = ({ updateObject, onSelectAchievement, updateAchievement
       });
       // Обновляем список достижений после удаления
       const updatedAchievements = achievements.filter(achievement => achievement.id !== achievementId);
-      setAchievements(updatedAchievements);
+      setAchievements();
     } catch (error) {
       console.error('Error deleting achievement:', error);
     }

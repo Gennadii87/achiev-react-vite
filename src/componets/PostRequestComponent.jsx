@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './PostRequestComponent.css'
 
-const PostRequestComponent = ({ userUuid, achievUuid, updateAchievements }) => {
+const PostRequestComponent = ({ userUuid, achievUuid }) => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
 
@@ -24,9 +24,9 @@ const PostRequestComponent = ({ userUuid, achievUuid, updateAchievements }) => {
       setStatus('success');
 
       // Вызываем функцию обновления списка достижений, переданную извне
-      if (updateAchievements) {
-        updateAchievements();
-      }
+      // if (updateAchievements) {
+      //   updateAchievements();
+      // }
   
       // Сбросить статус через некоторое время
       setTimeout(() => {

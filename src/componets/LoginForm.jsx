@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const LoginForm = ({ updateObject }) => {
+const LoginForm = ({  }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -31,7 +31,7 @@ const LoginForm = ({ updateObject }) => {
       setErrorMessage('');
 
       // Обновляем объект после успешного логина
-      updateObject();
+      // updateObject();
     } catch (error) {
       setErrorMessage('Failed to login. Please try again.');
       console.error(error);

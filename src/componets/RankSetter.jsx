@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './RankSetter.css';
 
-const RankSetter = ({ rankId, updateAchievements }) => {
+const RankSetter = ({ rankId }) => {
   const [rank, setRank] = useState(0);
   const [successMessage, setSuccessMessage] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -25,6 +25,7 @@ const RankSetter = ({ rankId, updateAchievements }) => {
         body: JSON.stringify({
           rank: rank
         })
+        
       });
       
       if (!response.ok) {
@@ -32,9 +33,6 @@ const RankSetter = ({ rankId, updateAchievements }) => {
       }
       
       setSuccessMessage('Успех!');
-      // Вызов функции updateAchievements для обновления данных достижений
-      updateAchievements();
-      
       // Сброс ранга после установки через секунду
       setTimeout(() => {
         setRank(0);

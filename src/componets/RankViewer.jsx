@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-const RankViewer = ({ updateObject, updateAchievements }) => {
+const RankViewer = ({  }) => {
   const [rankData, setRankData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -11,7 +11,7 @@ const RankViewer = ({ updateObject, updateAchievements }) => {
       // Чтение organization_id из локального хранилища
       const proId = localStorage.getItem('profile_id');
       setProfileId(proId);
-    }, [updateObject]);
+    }, []);
 
   useEffect(() => {
     if (!profileId || profileId === 0) {
@@ -32,7 +32,7 @@ const RankViewer = ({ updateObject, updateAchievements }) => {
     };
 
     fetchData();
-  }, [profileId, updateAchievements]);
+  }, [profileId]);
 
   if (loading) {
     return <div>Loading...</div>;

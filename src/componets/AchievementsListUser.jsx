@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AchievementsList.css'; 
 
-const AchievementsListUser = ({ userId, updateAchievements }) => {
+const AchievementsListUser = ({ userId }) => {
   const [achievements, setAchievements] = useState([]);
 
   const fetchData = async () => {
@@ -22,7 +22,7 @@ const AchievementsListUser = ({ userId, updateAchievements }) => {
     if (userId) {
       fetchData();
     }
-  }, [userId, updateAchievements]); // Добавляем updateAchievements в зависимости
+  }, [userId]); // Добавляем updateAchievements в зависимости
 
   const handleDeleteAchievement = async (id) => {
     try {

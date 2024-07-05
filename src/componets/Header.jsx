@@ -1,31 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../style/Header.css';
+
 
 function Header({ }) {
     
     return (
-        <div>
+        <>
             <header>
                 <ul>
                     REACT
                     <li>
-                        <button className='btn1'>home</button>
+                        <Link to="/"><button className='btn1'>Home</button></Link> 
                     </li>
                     <li>
-                        <button className='btn1'>users</button>
-                    </li>
-                    <li>
-                        <button className='btn1'>shop</button>
-                    </li>
-                    <li>
-                        <button className='btn1'>button4</button>
-                    </li>
-                    <li>
-                        <button className='btn1'>button5</button>
+                        <Link to="/gallery"><button className='btn1'>Create achievement</button></Link> 
                     </li>
                 </ul>
             </header>
-        </div>
+        </>
     );
 }
 

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AchievementsList.css'; 
 
-const AchievementsListUserView = ({ updateObject, updateAchievements }) => {
+const AchievementsListUserView = ({}) => {
   const [achievements, setAchievements] = useState([]);
 
   const [profileId, setProfileId] = useState(null);
@@ -12,7 +12,7 @@ const AchievementsListUserView = ({ updateObject, updateAchievements }) => {
       // Чтение organization_id из локального хранилища
       const proId = localStorage.getItem('profile_id');
       setProfileId(proId);
-    }, [updateObject]);
+    }, []);
 
   const fetchData = async () => {
     try {
@@ -31,7 +31,7 @@ const AchievementsListUserView = ({ updateObject, updateAchievements }) => {
     if (profileId) {
       fetchData();
     }
-  }, [profileId, updateAchievements]); // Добавляем updateAchievements в зависимости
+  }, [profileId]); // Добавляем updateAchievements в зависимости
 
 
   return (

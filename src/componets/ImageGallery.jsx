@@ -35,7 +35,7 @@ const ImageGallery = () => {
         <div key={image.id} className="image-card">
           <img src={image.data.image} alt={image.data.title} />
           <p>{image.data.title}</p>
-          <button className='delete_card_achiev' onClick={(e) => {e.stopPropagation(); handleDeleteAchievement(image.id)}}>Delete</button>
+          {/* <button className='delete_card_achiev' onClick={(e) => {e.stopPropagation(); handleDeleteAchievement(image.id)}}>Delete</button> */}
         </div>
       ))}
     </div>

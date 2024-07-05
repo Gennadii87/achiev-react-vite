@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const AchievListConnections = ({ updateObject }) => {
+const AchievListConnections = ({  }) => {
   const [achievements, setAchievements] = useState([]);
 
   const [profileId, setProfileId] = useState(null);
@@ -10,7 +10,7 @@ const AchievListConnections = ({ updateObject }) => {
       // Чтение profile_id из локального хранилища
       const proId = localStorage.getItem('profile_id');
       setProfileId(proId);
-    }, [updateObject]);
+    }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,6 +21,7 @@ const AchievListConnections = ({ updateObject }) => {
           data: item.data
         }));
         setAchievements(extractedAchievements);
+        
       } catch (error) {
         console.error('Error fetching data:', error);
       }

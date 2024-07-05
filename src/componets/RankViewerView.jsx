@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import RankSetter from './RankSetter';
 
-const RankViewerView = ({ selectedUserId, updateAchievements }) => {
+
+const RankViewerView = ({ selectedUserId }) => {
   const [rankData, setRankData] = useState([]);
   const [loading, setLoading] = useState(true);
+
+    
 
   useEffect(() => {
     if (!selectedUserId || selectedUserId === 0) {
@@ -15,6 +18,12 @@ const RankViewerView = ({ selectedUserId, updateAchievements }) => {
       try {
         const response = await fetch(`https://api.achiever.skroy.ru/ranks/?profile_id=${selectedUserId}`);
         const data = await response.json();
+
+        console.log(`Запрос...получения Rank ${JSON.stringify(data.map((item) => ({
+          profile_id: item.profile_id,
+          rank: item.rank
+        })))}`);
+
         setRankData(data);
         setLoading(false);
       } catch (error) {
@@ -24,7 +33,7 @@ const RankViewerView = ({ selectedUserId, updateAchievements }) => {
     };
 
     fetchData();
-  }, [selectedUserId, updateAchievements]);
+  }, [selectedUserId]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -48,7 +57,7 @@ return (
         ))
       )}
     </ul>
-    <RankSetter rankId={rankId} updateAchievements={updateAchievements}/>
+    <RankSetter rankId={rankId}/>
   </div>
 );
 

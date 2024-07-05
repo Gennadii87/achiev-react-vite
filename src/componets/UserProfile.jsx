@@ -4,7 +4,7 @@ import PostRequestComponent from './PostRequestComponent';
 
 const defaultAvatar = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Man_silhouette.svg/640px-Man_silhouette.svg.png';
 
-const UserProfile = ({ achievUuid, selectedUserId, setSelectedUserId, updateAchievements, updateObject}) => {
+const UserProfile = ({ achievUuid, selectedUserId, setSelectedUserId, updateObject}) => {
     const [userData, setUserData] = useState(null);
     const [userUuid, setUserUuid] = useState(null);
     const [editMode, setEditMode] = useState(false);
@@ -176,7 +176,7 @@ const UserProfile = ({ achievUuid, selectedUserId, setSelectedUserId, updateAchi
                                     <p>Телефон: {userData.phone}</p>
                                     <p>Дата рождения: {userData.birth_date}</p>
                                     <button className='edit-button' onClick={handleEditClick}>Редактировать профиль</button>
-                                    <PostRequestComponent userUuid={userUuid} achievUuid={achievUuid} updateAchievements={updateAchievements} />
+                                    <PostRequestComponent userUuid={userUuid} achievUuid={achievUuid}/>
                                 </div>
                             </>
                         ) : (
