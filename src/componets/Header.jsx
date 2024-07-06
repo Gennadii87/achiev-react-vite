@@ -8,15 +8,17 @@ function Header({ }) {
     return (
         <>
             <header>
-                <ul>
-                    REACT
-                    <li>
-                        <Link to="/"><button className='btn1'>Home</button></Link> 
-                    </li>
-                    <li>
-                        <Link to="/gallery"><button className='btn1'>Create achievement</button></Link> 
-                    </li>
-                </ul>
+                <div className='container_header'>
+                    <div className='container_nav'>
+                            <Link to="/"><button className='btn1'>Home</button></Link> 
+                        
+                        
+                            <Link to="/gallery"><button className='btn1'>Create achievement</button></Link> 
+                        
+                        
+                            <Link to="/users"><button className='btn1'>Users</button></Link> 
+                    </div>
+                </div>
             </header>
         </>
     );

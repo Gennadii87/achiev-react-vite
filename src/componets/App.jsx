@@ -59,11 +59,6 @@ function App() {
                             <AchievementsList onSelectAchievement={handleSelectAchievement}/>
                         </div>
 
-                        <div className='users'>
-                            <div><h1>Сотрудники</h1></div>
-                            <Users/>
-                        </div>
-
                         <div>
                             <h1>Станица сотрудника</h1>
                         </div>
@@ -71,19 +66,18 @@ function App() {
                         <div>
                             <LoginForm/>
                         </div>
+                        
                         <div className='profile'>
                             <UserProfileView/>
                             <AchievementsListUserView/>
                         </div>
 
                         <h1>Мои баллы</h1>
-
                         <RankViewer/>
 
                         <div>
                             <div>
                                 <h1>Связь награда-пользователь</h1>
-                                
                             </div>
                             <AchievListConnections/>
                         </div>
@@ -92,16 +86,26 @@ function App() {
                 }>
 
                 </Route>
-                
-                <Route path="/gallery" element={
+                <Route path="/users" 
+                    element={
+                        <div className='users'>
+                            <div>
+                                <h1>Сотрудники</h1>
+                            </div>
+                            <Users/>
+                        </div>
+                           }/>
+                <Route path="/gallery" 
+                    element={
                     <>
-                        <div><h1>Библиотека изображений</h1></div>
+                        <div>
+                            <h1>Библиотека изображений</h1>
+                        </div>
                         <div className='img_gallery'>
                             <ImageGallery />
                             <TemplateGallery />
                         </div>
                         <div className='achiev_form'><AchievForm /></div>
-                    
                     </>
                 } />
 

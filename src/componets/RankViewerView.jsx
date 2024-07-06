@@ -44,19 +44,19 @@ const RankViewerView = ({ selectedUserId }) => {
   
 return (
   <div>
-    <ul>
+    <dvi>
       {rankData.length === 0 ? (
-        <li>
+        <div>
           <h1>Баллы: 0</h1>
-        </li>
+        </div>
       ) : (
         rankData.map((item) => (
-          <li key={item.id}>
+          <div key={item.id}>
             <h1>Баллы: {item && item.rank !== undefined ? item.rank : 0}</h1> 
-          </li>
+          </div>
         ))
       )}
-    </ul>
+    </dvi>
     <RankSetter rankId={rankId}/>
   </div>
 );
