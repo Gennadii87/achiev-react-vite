@@ -34,7 +34,7 @@ const ImageGallery = () => {
       {images.map((image) => (
         <div key={image.id} className="image-card">
           <img src={image.data.image} alt={image.data.title} />
-          <p>{image.data.title}</p>
+          <div c><p>{image.data.title}</p></div>
           <button className='delete_img_achiev' onClick={(e) => {e.stopPropagation(); handleDeleteAchievement(image.id)}} disabled>удалить</button>
         </div>
       ))}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './ImageGallery.css';
+import './TemplateGallery.css';
 
 const TemplateGallery = () => {
   const [images, setImages] = useState([]);
@@ -19,11 +19,11 @@ const TemplateGallery = () => {
   }, []);
 
   return (
-    <div className="image-gallery">
+    <div className="template-gallery">
       {images.map((image) => (
-        <div key={image.id} className="image-card">
-          <img src={image.data.image} alt={image.data.title} />
-          <p>{image.data.title}</p>
+        <div key={image.id}  className="template-card with-background" style={{ backgroundImage: `url(${image.data.image})` }}>
+          {/* <img src={image.data.image} alt={image.data.title} /> */}
+          <div className='template_text'><p>{image.data.title}</p></div>
         </div>
       ))}
     </div>
