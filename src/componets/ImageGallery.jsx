@@ -3,6 +3,7 @@ import './ImageGallery.css';
 
 const ImageGallery = () => {
   const [images, setImages] = useState([]);
+  const [updatedAchievements, setAchievements] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,15 +17,14 @@ const ImageGallery = () => {
     };
 
     fetchData();
-  }, []);
+  }, [updatedAchievements]);
   const handleDeleteAchievement = async (imageId) => {
     try {
       await fetch(`https://api.achiever.skroy.ru/achievements/${imageId}/`, {
         method: 'DELETE'
       });
       // Обновляем список достижений после удаления
-      const updatedAchievements = images.filter(image => image.id !== imageId);
-      setAchievements(updatedAchievements);
+      setAchievements();
     } catch (error) {
       console.error('Error deleting achievement:', error);
     }
