@@ -62,3 +62,22 @@
     font-size: 12px;
   }
   
+  .delete_img_achiev {
+    width: 80px;
+    height: 25px;
+    font-size: 12px;
+    text-align: center;
+    background-color: rgb(61, 61, 61);
+    transition: background-color 0.5s ease;
+    border-width: 2px;
+    border-radius: 3px;
+    border-color:  rgb(121, 121, 121);
+  }
+  
+  .delete_img_achiev:hover {
+    background-color: rgb(255, 0, 76);
+    border-color:  rgb(223, 223, 223);
+    color: #f0f0f0;
+    border-width: 2px;
+    cursor: pointer;
+  }
