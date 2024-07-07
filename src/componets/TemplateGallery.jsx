@@ -30,13 +30,15 @@ const TemplateGallery = () => {
     }
   };
   return (
-    <div className="template-gallery">
-      {images.map((image) => (
-        <div key={image.id}  className="template-card with-background" style={{ backgroundImage: `url(${image.data.image})` }}>
-          <div className='template_text'><p>{image.data.title}</p></div>
-          <div className='container_delete'><button className='delete_template_achiev' onClick={(e) => {e.stopPropagation(); handleDeleteAchievement(image.id)}} disabled>удалить</button></div>
-        </div>
-      ))}
+    <div className='container_gallery'>
+        <div className="template-gallery">
+        {images.map((image) => (
+          <div key={image.id}  className="template-card with-background" style={{ backgroundImage: `url(${image.data.image})` }}>
+            <div className='template_text'><p>{image.data.title}</p></div>
+            <div className='container_delete'><button className='delete_template_achiev' onClick={(e) => {e.stopPropagation(); handleDeleteAchievement(image.id)}} disabled>удалить</button></div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

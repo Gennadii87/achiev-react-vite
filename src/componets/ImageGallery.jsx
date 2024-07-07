@@ -30,14 +30,16 @@ const ImageGallery = () => {
     }
   };
   return (
-    <div className="image-gallery">
-      {images.map((image) => (
-        <div key={image.id} className="image-card">
-          <img src={image.data.image} alt={image.data.title} />
-          <div c><p>{image.data.title}</p></div>
-          <button className='delete_img_achiev' onClick={(e) => {e.stopPropagation(); handleDeleteAchievement(image.id)}} disabled>удалить</button>
-        </div>
-      ))}
+    <div className='container_gallery_image'>
+      <div className="image-gallery">
+        {images.map((image) => (
+          <div key={image.id} className="image-card">
+            <img src={image.data.image} alt={image.data.title} />
+            <div c><p>{image.data.title}</p></div>
+            <div className='delete_img_achiev' onClick={(e) => {e.stopPropagation(); handleDeleteAchievement(image.id)}} disabled><p>удалить</p></div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
