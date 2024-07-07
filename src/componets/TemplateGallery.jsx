@@ -17,7 +17,7 @@ const TemplateGallery = () => {
     };
 
     fetchData();
-  }, []);
+  }, [updatedAchievements]);
   const handleDeleteAchievement = async (imageId) => {
     try {
       await fetch(`https://api.achiever.skroy.ru/achievements/${imageId}/`, {

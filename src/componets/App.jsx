@@ -101,9 +101,11 @@ function App() {
                         <div>
                             <h1>Библиотека изображений</h1>
                         </div>
-                        <div className='img_gallery'>
-                            <ImageGallery />
-                            <TemplateGallery />
+                        <div className='container_gallery'>
+                            <div className='img_gallery'>
+                                <ImageGallery />
+                                <TemplateGallery />
+                            </div>
                         </div>
                         <div className='achiev_form'><AchievForm /></div>
                     </>
